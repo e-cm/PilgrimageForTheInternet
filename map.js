@@ -269,6 +269,8 @@ function initMap() {
             var index = 0;
             var popIndex = 0;
             var continueButton = document.getElementById(continueButtons[index]);
+            var audio1 = new Audio('organ.mp3');
+            var audio2 = new Audio('end.mp3');
 
             google.maps.event.addDomListener(logo, 'click', function() {
                 if (testCircle.getBounds().contains(currentPosition.getPosition())) {
@@ -276,6 +278,7 @@ function initMap() {
                     document.getElementById(popUps[popIndex]).style.zIndex = "100";
                     document.getElementById(popUpsBoxes[popIndex]).style.display = "inline";
                     document.getElementById(popUpsBoxes[popIndex]).style.zIndex = "100";
+                    audio1.play();
                     index++;
 
                     //SETS NEXT DESTINATION
@@ -310,6 +313,7 @@ function initMap() {
                           document.getElementById('over').style.zIndex = "100";
                           document.getElementById("o").style.display = "inline";
                           document.getElementById("o").style.zIndex = "100";
+                          audio2.play();
                           console.log("last");
                         });
                     });
